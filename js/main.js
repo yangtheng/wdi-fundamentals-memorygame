@@ -26,13 +26,21 @@
  var score = 0;
  document.getElementById('score').innerHTML = score;
 
+ var streak = 0;
+ document.getElementById('streak').innerHTML = streak;
+
+
  var checkForMatch = function() {
  	if (cardsInPlay[0] === cardsInPlay[1]) {
 	 		alert("You found a match!");
 	 		score += 1;
 	 		document.getElementById('score').innerHTML = score;
+	 		streak += 1;
+	 		document.getElementById('streak').innerHTML = streak;
 	 	} else {
 	 		alert("Sorry, try again!");
+	 		streak = 0;
+	 		document.getElementById('streak').innerHTML = streak;
 	 	};
  };
 

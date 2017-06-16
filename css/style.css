@@ -90,3 +90,11 @@ footer {
 	font-size: 18px;
 	margin: 10px 0 0 0;
 }
+.score {
+	float: left;
+	margin: 40px 0 0 50px;
+}
+.streak {
+	float: right;
+	margin: 40px 50px 0 0;
+}
