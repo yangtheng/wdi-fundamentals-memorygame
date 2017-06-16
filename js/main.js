@@ -56,6 +56,7 @@
 
 	 if (cardsInPlay.length === 2) {
 	 	checkForMatch();
+	 	cardsInPlay = [];
 	 };
  };
 
@@ -91,4 +92,16 @@ var toReset = function() {
 	button.addEventListener('click',resetBoard);
 };
 
+var toResetScore = function() {
+	var resetScoreButton = document.getElementById('reset-score');
+	var resetScore = function () {
+		score = 0;
+		streak = 0;
+		document.getElementById('score').innerHTML = score;
+		document.getElementById('streak').innerHTML = streak;
+	};
+	resetScoreButton.addEventListener('click',resetScore);
+};
+
 toReset();
+toResetScore();
