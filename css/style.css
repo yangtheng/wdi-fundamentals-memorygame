@@ -88,7 +88,7 @@ footer {
 }
 button {
 	font-size: 18px;
-	margin: 10px 10px 0 0;
+	margin: 20px 10px -20px 10px;
 }
 .score {
 	float: left;
