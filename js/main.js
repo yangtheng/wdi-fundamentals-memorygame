@@ -24,23 +24,20 @@
  var cardsInPlay = [];
 
  var score = 0;
- document.getElementById('score').innerHTML = score;
-
+ 
  var streak = 0;
- document.getElementById('streak').innerHTML = streak;
-
 
  var checkForMatch = function() {
  	if (cardsInPlay[0] === cardsInPlay[1]) {
 	 		alert("You found a match!");
 	 		score += 1;
-	 		document.getElementById('score').innerHTML = score;
+	 		document.getElementById('score').innerHTML = "Score: " + score;
 	 		streak += 1;
-	 		document.getElementById('streak').innerHTML = streak;
+	 		document.getElementById('streak').innerHTML = "Streak: " + streak;
 	 	} else {
 	 		alert("Sorry, try again!");
 	 		streak = 0;
-	 		document.getElementById('streak').innerHTML = streak;
+	 		document.getElementById('streak').innerHTML = "Streak: " + streak;
 	 	};
  };
 
@@ -60,21 +57,11 @@
 	 };
  };
 
- var createBoard = function () {
- 	for (var i = 0; i < cards.length; i++) {
- 		var cardElement = document.createElement('img');
- 		cardElement.setAttribute('src', 'images/back.png');
- 		cardElement.setAttribute('data-id', i);
- 		cardElement.addEventListener('click',flipCard);
- 		document.getElementById('game-board').appendChild(cardElement);
- 	};
- };
-
- createBoard();
-
  var resetBoard = function () {
  		var gameBoard = document.getElementById('game-board');
  		gameBoard.innerHTML = "";
+ 		document.getElementById('score').innerHTML = "Score: " + score;
+ 		document.getElementById('streak').innerHTML = "Streak: " + streak;
 
  		cardsInPlay = [];
  		
@@ -97,8 +84,8 @@ var toResetScore = function() {
 	var resetScore = function () {
 		score = 0;
 		streak = 0;
-		document.getElementById('score').innerHTML = score;
-		document.getElementById('streak').innerHTML = streak;
+		document.getElementById('score').innerHTML = "Score: " + score;
+		document.getElementById('streak').innerHTML = "Streak: " + streak;
 	};
 	resetScoreButton.addEventListener('click',resetScore);
 };
