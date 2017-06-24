@@ -57,6 +57,19 @@
 	 };
  };
 
+ var shuffle = function (array) {
+  var i = 0;
+  var j = 0;
+  var temp = null;
+
+  for (var i = array.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  };
+};
+
  var resetBoard = function () {
  		var gameBoard = document.getElementById('game-board');
  		gameBoard.innerHTML = "";
@@ -64,6 +77,8 @@
  		document.getElementById('streak').innerHTML = "Streak: " + streak;
 
  		cardsInPlay = [];
+
+ 		shuffle(cards);
  		
  		for (var i = 0; i < cards.length; i++) {
  		var cardElement = document.createElement('img');
