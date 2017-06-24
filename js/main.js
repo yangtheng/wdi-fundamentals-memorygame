@@ -24,7 +24,7 @@
  var cardsInPlay = [];
 
  var score = 0;
- 
+
  var streak = 0;
 
  var checkForMatch = function() {
@@ -47,9 +47,11 @@
 	 console.log(cards[cardId].cardImage);
 	 console.log(cards[cardId].suit);
 
-	 cardsInPlay.push(cards[cardId].rank);
+	 if (this.getAttribute('src') === 'images/back.png') {
+   cardsInPlay.push(cards[cardId].rank);
+   }
 
-	 this.setAttribute('src', cards[cardId].cardImage);
+   this.setAttribute('src', cards[cardId].cardImage);
 
 	 if (cardsInPlay.length === 2) {
 	 	checkForMatch();
@@ -79,7 +81,7 @@
  		cardsInPlay = [];
 
  		shuffle(cards);
- 		
+
  		for (var i = 0; i < cards.length; i++) {
  		var cardElement = document.createElement('img');
  		cardElement.setAttribute('src', 'images/back.png');
@@ -87,7 +89,7 @@
  		cardElement.addEventListener('click',flipCard);
  		document.getElementById('game-board').appendChild(cardElement);
  	};
- }; 
+ };
 
 var toReset = function() {
 	var button = document.getElementById('reset');
